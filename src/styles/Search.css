@@ -1,0 +1,52 @@
+.search {
+  width: 32px;
+  height: 32px;
+
+  background-image: url("https://www.mcdonalds.ua/etc/clientlibs/mcd/rwd-commons/images/top_sprite.svg");
+  background-size: 140px 74px;
+
+  cursor: pointer;
+}
+
+.search:hover {
+  background-position: 0 -40px;
+}
+
+.search--active {
+  width: 200px;
+  height: 40px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search--active__deactivate-button {
+  width: 32px;
+  height: 32px;
+
+  background-image: url('../images/deactivate_icon.svg');
+  background-size: contain;
+
+  cursor: pointer;
+}
+
+.search--active__input {
+  width: 130px;
+
+  outline: none;
+  border: none;
+  font-size: 20px;
+}
+
+.search--active__search-icon {
+  width: 32px;
+  height: 32px;
+
+  background-image: url("https://www.mcdonalds.ua/etc/clientlibs/mcd/rwd-commons/images/top_sprite.svg");
+  background-size: 140px 74px;
+  background-position: 0 -40px;
+}

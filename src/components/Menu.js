@@ -1,16 +1,18 @@
 import React from 'react';
-import { testAction } from '../redux-store/store';
-import { connect } from 'react-redux';
+import '../styles/Menu.css';
+import Header from './Header';
+import Footer from './Footer';
 
-const Menu = ({ dispatch }) => {
+const Menu = () => {
   return (
     <div>
-      <h1>Menu</h1>
-      <button onClick={() => {dispatch(testAction())}}>
-        Test for Redux
-      </button>
+      <Header />
+      <main className="menu">
+        Content
+      </main>
+      <Footer />
     </div>
   );
 };
 
-export default connect(null, null)(Menu);
+export default Menu;

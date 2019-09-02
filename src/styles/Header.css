@@ -1,0 +1,21 @@
+header {
+  height: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+
+  padding: 0 120px;
+
+  opacity: 0.8;
+  background-color: black;
+  color: white;
+}
+
+.header__logo {
+  opacity: 1;
+  margin-top: 26px;
+  width: 92px;
+  height: 80px;
+}
