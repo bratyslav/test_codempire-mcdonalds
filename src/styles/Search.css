@@ -13,7 +13,6 @@
 }
 
 .search--active {
-  width: 200px;
   height: 40px;
 
   display: flex;
@@ -36,10 +35,15 @@
 
 .search--active__input {
   width: 130px;
+  transition: width 400ms;
 
   outline: none;
   border: none;
   font-size: 20px;
+}
+
+.search--active__input-animation {
+  width: 0;
 }
 
 .search--active__search-icon {

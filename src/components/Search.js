@@ -1,21 +1,31 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/Search.css';
+const classNames = require('classnames');
 
 const Search = () => {
   const [isActive, activity] = useState(false);
-
+  // to animate opening:
+  const [openingAnimation, runOpeningAnimation] = useState(false);
+  const searchInputClassName = classNames({
+    'search--active__input': true,
+    'search--active__input-animation': !openingAnimation,
+  });
 
   const activate = () => {
     activity(true);
+
+    setTimeout(() => {
+      runOpeningAnimation(true);
+    }, 0);
   };
 
   const deactivate = () => {
     activity(false);
+    runOpeningAnimation(false);
   };
 
-  // to deactivate in case of loss of focus
+  // to deactivate in case of loss of focus:
   const wrapperRef = useRef(null);
-  useOutsideAlterter(wrapperRef);
 
   function useOutsideAlterter(ref) {
     function handleClickOutside(event) {
@@ -32,6 +42,8 @@ const Search = () => {
     });
   };
 
+  useOutsideAlterter(wrapperRef);
+
   return (
     isActive ?
       <div className="search--active" ref={wrapperRef}>
@@ -40,13 +52,18 @@ const Search = () => {
           onClick={deactivate}
         />
         <input
-          className="search--active__input"
+          className={searchInputClassName}
+          id="searchInput"
           type="text"
           placeholder="Search"
           maxLength="15"
           autoFocus={true}
+          autoComplete="off"
         />
-        <div className="search--active__search-icon" />
+        <label htmlFor="searchInput">
+          <div className="search--active__search-icon" />
+        </label>
+
       </div>
       :
       <div className="search" onClick={activate}></div>      
