@@ -1,0 +1,45 @@
+.basket-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.basket-item__count-wrapper {
+  margin-left: auto;
+  display: flex;
+}
+
+.basket-item__count {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 30px;
+
+  border: 1px solid black;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.basket-item button {
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 30px;
+
+  font-size: 30px;
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.basket-item button:hover {
+  background-color:rgb(230, 230, 230);
+  transition: all 200ms;
+}
+
+.basket-item__delete-button {
+  margin-left: 10px;
+}
