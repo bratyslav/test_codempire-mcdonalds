@@ -1,6 +1,7 @@
 .search {
   width: 32px;
   height: 32px;
+  margin-left: auto;
 
   background-image: url("https://www.mcdonalds.ua/etc/clientlibs/mcd/rwd-commons/images/top_sprite.svg");
   background-size: 140px 74px;
@@ -14,6 +15,7 @@
 
 .search--active {
   height: 40px;
+  margin-left: auto;
 
   display: flex;
   justify-content: space-around;
@@ -26,11 +28,17 @@
 .search--active__deactivate-button {
   width: 32px;
   height: 32px;
+  margin-left: 5px;
 
   background-image: url('../images/deactivate_icon.svg');
   background-size: contain;
 
   cursor: pointer;
+  transition: transform 200ms;
+}
+
+.search--active__deactivate-button:hover {
+  transform: scale(1.3);
 }
 
 .search--active__input {
@@ -53,4 +61,6 @@
   background-image: url("https://www.mcdonalds.ua/etc/clientlibs/mcd/rwd-commons/images/top_sprite.svg");
   background-size: 140px 74px;
   background-position: 0 -40px;
+
+  cursor: pointer;
 }

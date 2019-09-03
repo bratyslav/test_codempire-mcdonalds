@@ -1,7 +1,6 @@
 header {
   height: 54px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
@@ -18,6 +17,14 @@ header {
   margin-top: 26px;
   width: 92px;
   height: 80px;
+}
+
+.header__link-to-basket {
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  background-image: url('../images/basket_icon.png');
+  background-size: contain;
 }
 
 @media (max-width: 900px) {
