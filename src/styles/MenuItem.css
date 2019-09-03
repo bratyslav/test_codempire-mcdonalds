@@ -10,6 +10,7 @@
 .menu-item__image {
   width: 200px;
   height: 200px;
+  transition: transform 300ms;
 }
 
 .menu-item__image:hover {

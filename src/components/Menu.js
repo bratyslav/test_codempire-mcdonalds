@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { loadDB } from '../redux-store/store';
 import '../styles/Menu.css';
-import { items } from '../API/menu-items';
 import MenuItem from './MenuItem';
 import Header from './Header';
 import Footer from './Footer';
 
-const Menu = () => {
+const Menu = (props) => {
+  const [loaded, setLoadStatus] = useState(false);
+  let menuItems = null;
+  console.log(props.getState());
+
   return (
+    menuItems ?
+
     <div>
       <Header />
       <main className="menu">
@@ -21,13 +28,17 @@ const Menu = () => {
         <hr className="menu__headline-underline"/>
         <div className="menu__content">
           {
-            items.map(item => <MenuItem item={item} key={item.id} />)
+            menuItems.map(item => <MenuItem item={item} key={item.id} />)
           }
         </div>
       </main>
       <Footer />
     </div>
+
+    :
+
+    <h1>Loading</h1>
   );
 };
 
-export default Menu;
+export default connect(null, null)(Menu);

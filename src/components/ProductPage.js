@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/ProductPage.css';
-import { items } from '../API/menu-items';
 import Header from './Header';
 import Footer from './Footer';
 
 const ProductPage = ({ match }) => {
-  const item = items.find(item => item.id === match.params.productName);
+  const item = [{id: 0, name: 'a', description: 'a', image: 'https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.Sdwch_BigMac.png'}]
+    .find(item => item.id === match.params.productName);
 
   return (
     <div>
