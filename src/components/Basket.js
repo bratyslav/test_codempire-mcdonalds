@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Basket.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -13,7 +14,9 @@ const Basket = () => {
         <BasketItem />
         <div className="basket__buttons-wrapper">
           <button>Оформити замовлення</button>
-          <button>Завершити</button>
+          <button>
+            <Link to="/" className="basket__close">Завершити</Link>
+          </button>
         </div>
       </main>
       <Footer />
