@@ -12,6 +12,7 @@ const BasketItem = ({ item, deleteItemFromBasket, changeCount }) => {
       <div className="basket-item">
         <img src={item.image} alt="product foto" />
         <h2 className="basket-item__name">{item.name}</h2>
+        
         <div className="basket-item__count-wrapper">
           <button onClick={() => changeCount(item.id, true)}>+</button>
           <div className="basket-item__count">{item.count}</div>
