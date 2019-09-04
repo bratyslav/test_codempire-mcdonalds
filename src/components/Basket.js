@@ -7,32 +7,47 @@ import BasketItem from './BasketItem';
 
 const Basket = ({ items, deleteAllFromBasket }) => {
   return (
-    <main className="basket">
-      <h1>Кошик</h1>
-      <Link
-        to="/"
-        className="basket__link-to-menu"
-      >
-        ⇦ меню
-      </Link>
-      {
-        items ?
-        items.map(item => <BasketItem item={item} key={item.id} />)
-        : ''
-      }
-      <div className="basket__buttons-wrapper">
-        <button>Оформити замовлення</button>
-        <button>
-          <Link
-            to="/"
-            className="basket__close"
-            onClick={deleteAllFromBasket}
-          >  
-            Завершити
-          </Link>
-        </button>
-      </div>
-    </main>
+    items.length !== 0 ?
+
+      <main className="basket">
+        <h1>Кошик</h1>
+        <Link
+          to="/"
+          className="basket__link-to-menu"
+        >
+          ⇦ меню
+        </Link>
+        {
+          items ?
+          items.map(item => <BasketItem item={item} key={item.id} />)
+          : ''
+        }
+        <div className="basket__buttons-wrapper">
+          <button>Оформити замовлення</button>
+          <button>
+            <Link
+              to="/"
+              className="basket__close"
+              onClick={deleteAllFromBasket}
+            >  
+              Завершити
+            </Link>
+          </button>
+        </div>
+      </main>
+
+      :
+
+      <main className="basket">
+        <h1>Кошик</h1>
+        <p className="basket__empty-basket-message">Зараз тут пусто</p>
+        <Link
+          to="/"
+          className="basket__link-to-menu"
+        >
+          ⇦ меню
+        </Link>
+      </main>
   );
 };
 

@@ -3,6 +3,10 @@
   padding: 10px 120px 100px;
 }
 
+.basket__empty-basket-message {
+  font-size: 20px;
+}
+
 .basket__link-to-menu {
   margin-left: 5px;
   text-decoration: none;
