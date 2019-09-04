@@ -108,6 +108,27 @@ const reducer = (state, action) => {
         basketItems: state.basketItems.filter(item => item.id !== action.id)
       };
 
+    case CHANGE_COUNT_OF_BASKET_ITEM:
+      return {
+        state,
+        basketItems: state.basketItems.map(item => {
+          if (item.id === action.id) {
+            return {
+              ...item,
+              count: action.direction ?
+                item.count + 1
+                :
+                item.count === 1 ?
+                  item.count
+                  :
+                  item.count - 1
+            };
+          };
+
+          return item;
+        })
+      };
+
     default:
       return state;  
   }
