@@ -31,7 +31,9 @@ const Menu = ({ loadData, loaded, items }) => {
 
     :
 
-    <h1>Loading</h1>
+    <main className="menu">
+      <h1>Loading...</h1>
+    </main>
   );
 };
 
