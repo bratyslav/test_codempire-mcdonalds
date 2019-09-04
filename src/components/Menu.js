@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { loadDB } from '../redux-store/store';
 import '../styles/Menu.css';
@@ -6,13 +6,13 @@ import MenuItem from './MenuItem';
 import Header from './Header';
 import Footer from './Footer';
 
-const Menu = (props) => {
-  const [loaded, setLoadStatus] = useState(false);
-  let menuItems = null;
-  console.log(props.getState());
+const Menu = ({ loadDB, loaded, items }) => {
+  useEffect(() => {
+    loadDB();
+  });
 
   return (
-    menuItems ?
+    loaded ?
 
     <div>
       <Header />
@@ -28,7 +28,7 @@ const Menu = (props) => {
         <hr className="menu__headline-underline"/>
         <div className="menu__content">
           {
-            menuItems.map(item => <MenuItem item={item} key={item.id} />)
+            items.map(item => <MenuItem item={item} key={item.id} />)
           }
         </div>
       </main>
@@ -41,4 +41,13 @@ const Menu = (props) => {
   );
 };
 
-export default connect(null, null)(Menu);
+const mapState = (state) => ({
+  items: state.data,
+  loaded: state.loaded
+});
+
+const mapDispatch = (dispatch) => ({
+  loadDB: () => dispatch(loadDB())
+});
+
+export default connect(mapState, mapDispatch)(Menu);
