@@ -1,6 +1,18 @@
 .basket {
-  min-height: 65.7vh;
+  min-height: calc(100vh - 204px);
   padding: 10px 120px 100px;
+}
+
+.basket__link-to-menu {
+  margin-left: 5px;
+  text-decoration: none;
+  color: black;
+  transition: color 300ms;
+}
+
+.basket__link-to-menu:hover {
+  transition: color 300ms;
+  color: rgb(250, 204, 0);
 }
 
 .basket__buttons-wrapper {
@@ -21,6 +33,10 @@
 .basket__buttons-wrapper button:hover {
   transition: transform 300ms;
   transform: scale(1.05);
+}
+
+.basket__buttons-wrapper button:active {
+  transform: scale(1.02);
 }
 
 .basket__close {

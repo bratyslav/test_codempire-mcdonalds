@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }
 
+.basket-item__name {
+  margin-left: 10px;
+}
+
 .basket-item__count-wrapper {
   margin-left: auto;
   display: flex;

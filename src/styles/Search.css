@@ -7,10 +7,16 @@
   background-size: 140px 74px;
 
   cursor: pointer;
+  transition: transform 300ms;
 }
 
 .search:hover {
-  background-position: 0 -40px;
+  transform: scale(1.08);
+  transition: transform 300ms;
+}
+
+.search:active {
+  transform: scale(1.04);
 }
 
 .search--active {
@@ -39,6 +45,10 @@
 
 .search--active__deactivate-button:hover {
   transform: scale(1.3);
+}
+
+.search--active__deactivate-button:active {
+  transform: scale(1);
 }
 
 .search--active__input {

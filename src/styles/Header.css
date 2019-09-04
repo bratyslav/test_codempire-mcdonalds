@@ -4,6 +4,7 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 100;
 
   padding: 0 120px;
 
@@ -25,6 +26,16 @@ header {
   margin-left: 5px;
   background-image: url('../images/basket_icon.png');
   background-size: contain;
+  transition: transform 300ms;
+}
+
+.header__link-to-basket:hover {
+  transition: transform 300ms;
+  transform: scale(1.08);
+}
+
+.header__link-to-basket:active {
+  transform: scale(1.04);
 }
 
 @media (max-width: 900px) {

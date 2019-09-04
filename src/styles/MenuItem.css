@@ -17,3 +17,9 @@
   transform: scale(1.2);
   transition: transform 300ms;
 }
+
+
+.menu-item__image:active {
+  transform: scale(1.1);
+}
+

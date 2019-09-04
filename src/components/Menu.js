@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { loadDB } from '../redux-store/store';
+import { loadData } from '../redux-store/store';
 import '../styles/Menu.css';
 import MenuItem from './MenuItem';
 import Header from './Header';
 import Footer from './Footer';
 
-const Menu = ({ loadDB, loaded, items }) => {
+const Menu = ({ loadData, loaded, items }) => {
   useEffect(() => {
-    loadDB();
+    loadData();
   });
 
   return (
@@ -47,7 +47,7 @@ const mapState = (state) => ({
 });
 
 const mapDispatch = (dispatch) => ({
-  loadDB: () => dispatch(loadDB())
+  loadData: () => dispatch(loadData())
 });
 
 export default connect(mapState, mapDispatch)(Menu);

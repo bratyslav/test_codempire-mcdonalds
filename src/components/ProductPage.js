@@ -1,12 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addToBasket } from '../redux-store/store';
 import '../styles/ProductPage.css';
 import Header from './Header';
 import Footer from './Footer';
 
-const ProductPage = ({ match }) => {
-  const item = [{id: 0, name: 'a', description: 'a', image: 'https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.Sdwch_BigMac.png'}]
-    .find(item => item.id === match.params.productName);
+const ProductPage = ({ match, items, addToBasket }) => {
+  const item = items.find(item => item.id === match.params.productName);
 
   return (
     <div>
@@ -21,7 +22,11 @@ const ProductPage = ({ match }) => {
         <div className="product-page__description">
           {item.description}
         </div>
-        <Link className="product-page__add-button" to="/basket">
+        <Link
+          className="product-page__add-button"
+          to="/basket"
+          onClick={() => addToBasket(item)}
+        >
           Додати в Кошик
         </Link>
       </main>
@@ -30,4 +35,12 @@ const ProductPage = ({ match }) => {
   );
 };
 
-export default ProductPage;
+const mapState = (state) => ({
+  items: state.data
+});
+
+const mapDispatch = (dispatch) => ({
+  addToBasket: (item) => dispatch(addToBasket(item))
+});
+
+export default connect(mapState, mapDispatch)(ProductPage);

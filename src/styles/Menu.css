@@ -1,6 +1,6 @@
 .menu {
   padding: 10px 120px 100px;
-  min-height: 65.7vh;
+  min-height: calc(100vh - 204px);
 }
 
 .menu__headline {
