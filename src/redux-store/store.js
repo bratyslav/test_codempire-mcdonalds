@@ -26,7 +26,7 @@ const setData = (data) => ({
 
 export const loadData = () => {
   return (dispatch) => {
-    fetch('http://localhost:4000/items')
+    fetch('https://lit-headland-35682.herokuapp.com/db')
       .then(db => db.json())
       .then(db => {
         dispatch(setData(db));
@@ -59,9 +59,10 @@ export const changeCountOfBasketItem = (id, direction) => ({
 const reducer = (state, action) => {
   switch (action.type) {
     case SET_DATA:
+      console.log(action.data)
       return {
         ...state,
-        data: action.data,
+        data: action.data.items,
         loaded: true
       };
     case ADD_TO_BASKET:
