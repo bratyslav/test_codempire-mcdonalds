@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { loadData } from '../redux-store/store';
 import '../styles/Menu.css';
 import MenuItem from './MenuItem';
+import Loader from './Loader';
 import PropTypes from 'prop-types';
 
 const Menu = ({ loadData, loaded, items, searchingStr }) => {
@@ -11,7 +12,7 @@ const Menu = ({ loadData, loaded, items, searchingStr }) => {
   });
 
   return (
-    loaded ?
+    null ?
 
     <main className="menu">
       <div className="menu__headline">
@@ -37,7 +38,7 @@ const Menu = ({ loadData, loaded, items, searchingStr }) => {
     :
 
     <main className="menu">
-      <h1>Loading...</h1>
+      <Loader />
     </main>
   );
 };
