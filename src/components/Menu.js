@@ -12,7 +12,7 @@ const Menu = ({ loadData, loaded, items, searchingStr }) => {
   });
 
   return (
-    null ?
+    loaded ?
 
     <main className="menu">
       <div className="menu__headline">
