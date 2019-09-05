@@ -22,10 +22,6 @@
   font-size: 20px;
 }
 
-.product-page__ingredients input[type="checkbox"] {
-
-}
-
 .product-page__description-section {
   margin-left: 20px;
   display: flex;
@@ -75,6 +71,10 @@
     width: 60vw;
   }
 
+  .product-page__description-section {
+    margin-left: 0;
+  }
+  
   .product-page__description {
     margin-top: 20px;
   }

@@ -75,12 +75,6 @@ const ProductPage = ({ match, items, addToBasket }) => {
 
       <main className="product-page">
         <h1>Товар не знайдено</h1>
-        <Link
-          to="/"
-          className="basket__link-to-menu"
-        >
-          ⇦ меню
-        </Link>
       </main>
   );
 };
