@@ -3,25 +3,44 @@
   padding: 10px 120px 100px;
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
 }
 
 .product-page h1 {
+  text-align: center;
   margin-top: 80px;
   font-size: 40px;
 }
 
 .product-page__product-image {
-  width: 60vw;
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.product-page__ingredients {
+  font-size: 20px;
+}
+
+.product-page__ingredients input[type="checkbox"] {
+
+}
+
+.product-page__description-section {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-page__description {
-  font-size: 30px;
+  margin-top: 300px;
+  font-size: 28px;
   text-align: justify;
 }
 
 .product-page__add-button {
+  display: block;
   width: 100%;
   margin-top: 50px;
   padding: 10px 0;
@@ -45,6 +64,20 @@
 
 .product-page__add-button:active {
   transform: scale(1.02);
+}
+
+@media (max-width: 1100px) {
+  .product-page {
+    flex-direction: column;
+  }
+
+  .product-page__product-image {
+    width: 60vw;
+  }
+
+  .product-page__description {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -76,3 +109,59 @@
     font-size: 17px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+  
+  input[type=checkbox].css-checkbox {
+      position: absolute; 
+      overflow: hidden; 
+      clip: rect(0 0 0 0); 
+      height:1px; 
+      width:1px; 
+      margin:-1px; 
+      padding:0;
+      border:0;
+  }
+  
+  input[type=checkbox].css-checkbox + label.css-label {
+    padding-left:20px;
+    height:15px; 
+    display:inline-block;
+    line-height:15px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+  }
+  
+  input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -15px;
+  }
+  
+  .css-label{
+    background-image:url(http://csscheckbox.com/checkboxes/dark-check-green.png);
+  }

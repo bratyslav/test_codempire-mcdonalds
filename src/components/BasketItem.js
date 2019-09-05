@@ -8,26 +8,31 @@ const BasketItem = ({ item, deleteItemFromBasket }) => {
   return (
     <div>
       <div className="basket-item">
-        <img src={item.image} alt="product foto" />
+        <img
+          className="basket-item__image"
+          src={item.image}
+          alt="product foto"
+        />
         <h2 className="basket-item__name">{item.name}</h2>
 
-        <div>
-          {
-            item.ingredients.map(ingredient => (
-              ingredient.added ? 
-                <div key={ingredient.name}>{ingredient.name}</div>
-                : 
-                ''
-            ))
-          }
-        </div>
-
-        <button
-          className="basket-item__delete-button"
-          onClick={() => deleteItemFromBasket(item.id)}
-        >
-          ×
-        </button>
+        <section className="basket-item__ingredients">
+          <div>
+            {
+              item.ingredients.map(ingredient => (
+                  <div key={ingredient.name}>
+                    {`${ingredient.added? '✓' : '×' } ${ingredient.name}`}
+                  </div>
+              ))
+            }
+          </div>
+          &nbsp;
+          <button
+            className="basket-item__delete-button"
+            onClick={() => deleteItemFromBasket(item.id)}
+          >
+            ×
+          </button>
+        </section>
       </div>
 
       <hr />

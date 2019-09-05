@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToBasket } from '../redux-store/store';
 import '../styles/ProductPage.css';
+import '../styles/checkmark.css'
 import PropTypes from 'prop-types';
 
 const ProductPage = ({ match, items, addToBasket }) => {
@@ -29,37 +30,45 @@ const ProductPage = ({ match, items, addToBasket }) => {
     item ?
 
       <main className="product-page">
-        <h1>{item.name}</h1>
-        <img
-          className="product-page__product-image"
-          src={item.image}
-          alt="product foto"
-        />
-        <div>
-          {
-            item.ingredients.map(ingredient => (
-              <label key={ingredient.name}>
-                {ingredient.name}
-                <input
-                  type="checkbox"
-                  name={ingredient.name}
-                  checked={ingredient.added}
-                  onChange={(event) => changeComposition(event)}
-                />
-              </label>
-            ))
-          }
-        </div>
-        <div className="product-page__description">
-          {item.description}
-        </div>
-        <Link
-          className="product-page__add-button"
-          to="/basket"
-          onClick={() => addToBasket(item)}
-        >
-          Додати в Кошик
-        </Link>
+        <section>
+          <h1>{item.name}</h1>
+          <img
+            className="product-page__product-image"
+            src={item.image}
+            alt="product foto"
+          />
+          <div className="product-page__ingredients">
+            <h2>Склад:</h2>
+            {
+              item.ingredients.map(ingredient => (
+                <label key={ingredient.name}>
+                  <input
+                    type="checkbox"
+                    name={ingredient.name}
+                    checked={ingredient.added}
+                    onChange={(event) => changeComposition(event)}
+                  />
+                  <span className="checkmark"></span>
+                  {ingredient.name}
+                  <br />
+                </label>
+              ))
+            }
+          </div>
+        </section>
+
+        <section className="product-page__description-section">
+          <div className="product-page__description">
+            {item.description}
+          </div>
+          <Link
+            className="product-page__add-button"
+            to="/basket"
+            onClick={() => addToBasket(item)}
+          >
+            Додати в Кошик
+          </Link>
+        </section>
       </main>
 
       :
