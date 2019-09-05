@@ -4,7 +4,7 @@ header {
   z-index: 100;
 }
 
-.header { 
+.header {
   height: 54px;
   display: flex;
   align-items: center;
@@ -42,19 +42,31 @@ header {
 }
 
 @media (max-width: 900px) {
-  header {
+  .header {
     padding: 0 60px;
+  }
+
+  .header__logo {
+    left: 60px;
   }
 }
 
 @media (max-width: 600px) {
-  header {
+  .header {
     padding: 0 30px 0 0;
+  }
+
+  .header__logo {
+    left: 0;
   }
 }
 
 @media (max-width: 400px) {
-  header {
+  .header {
     padding: 0 10px 0 0;
+  }
+
+  .header__logo {
+    left: 0;
   }
 }
