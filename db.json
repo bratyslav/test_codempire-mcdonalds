@@ -22,57 +22,151 @@
     },
     {
       "id": "Sdwch_BigTasty",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.Sdwch_BigTasty.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.Sdwch_BigTasty.png",
       "name": "Бiг Тейстi",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Натуральна яловичина у поєднанні зі свіжими овочами та плавленим сиром “Емменталь”.",
+      "ingredients": [
+        {
+          "name": "булочка",
+          "added": true
+        },
+        {
+          "name": "соус",
+          "added": true
+        },
+        {
+          "name": "овочi",
+          "added": true
+        }
+      ]
     },
     {
       "id": "Sdwch_Hamburger",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.Sdwch_Hamburger.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.Sdwch_Hamburger.png",
       "name": "Гамбургер",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Біфштекс із натуральної яловичини, цибуля, шматочок маринованого огірка, заправлені гірчицею і кетчупом, у запашній булочці з пшеничного борошна.",
+      "ingredients": [
+        {
+          "name": "булочка",
+          "added": true
+        },
+        {
+          "name": "соус",
+          "added": true
+        },
+        {
+          "name": "цибуля",
+          "added": true
+        }
+      ]
     },
     {
       "id": "Sdwch_DoubleCheeseburger",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.Sdwch_DoubleCheeseburger.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.Sdwch_DoubleCheeseburger.png",
       "name": "Дабл Чiзбургер",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Два біфштекси з натуральної яловичини, два шматочки сиру “Чеддер”, цибуля, гірчиця, кетчуп, булочка.",
+      "ingredients": [
+        {
+          "name": "булочка",
+          "added": true
+        },
+        {
+          "name": "сир",
+          "added": true
+        },
+        {
+          "name": "соус",
+          "added": true
+        }
+      ]
     },
     {
       "id": "Sdwch_Cheeseburger",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.Sdwch_Cheeseburger.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.Sdwch_Cheeseburger.png",
       "name": "Чiзбургер",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Біфштекс із натуральної яловичини, шматочок сиру “Чеддер”, шматочок маринованого огірка та цибуля, заправлені гірчицею і кетчупом, у булочці з пшеничного борошна.",
+      "ingredients": [
+        {
+          "name": "булочка",
+          "added": true
+        },
+        {
+          "name": "цибуля",
+          "added": true
+        },
+        {
+          "name": "соус",
+          "added": true
+        },
+        {
+          "name": "огiрки",
+          "added": true
+        }
+      ]
     },
     {
       "id": "FFLarge",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.FFLarge.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.FFLarge.png",
       "name": "Картопля Фрi Велика",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Добірна картопля, засмажена в натуральній олії і трохи підсолена.",
+      "ingredients": [
+        {
+          "name": "соус",
+          "added": true
+        }
+      ]
     },
     {
       "id": "FFMedium",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.FFMedium.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.FFMedium.png",
       "name": "Картопля Фрi Середня",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Добірна картопля, засмажена в натуральній олії і трохи підсолена.",
+      "ingredients": [
+        {
+          "name": "соус",
+          "added": true
+        }
+      ]
     },
     {
       "id": "FFSmall",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.FFSmall.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.FFSmall.png",
       "name": "Картопля Фрi Маленька",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Добірна картопля, засмажена в натуральній олії і трохи підсолена.",
+      "ingredients": [
+        {
+          "name": "соус",
+          "added": true
+        }
+      ]
     },
     {
       "id": "CoffeeAmericanoMedium",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.CoffeeAmericanoMedium.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.CoffeeAmericanoMedium.png",
       "name": "Кава Американо",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Американо – це еспресо з додаванням гарячої води і тому напій має аналогічні характеристики.",
+      "ingredients": [
+        {
+          "name": "молоко",
+          "added": false
+        },
+        {
+          "name": "цукор",
+          "added": true
+        }
+      ]
     },
     {
       "id": "CoffeeEspresso",
-      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/thumb.CoffeeEspresso.png",
+      "image": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.CoffeeEspresso.png",
       "name": "Кава Еспресо",
-      "description": "Два біфштекси з натуральної яловичини, цибуля, маринований огірок, сир “Чеддер”, свіжий салат, заправлені спеціальним соусом, у булочці з насінням сезаму."
+      "description": "Еспресо – дуже міцна кава без молока в маленьких порціях. Еспресо має густу однорідну «живу» пінку світло-горіхового кольору з «тигровими» розводами, яка відновлюється після розмішування напою.",
+      "ingredients": [
+        {
+          "name": "цукор",
+          "added": true
+        }
+      ]
     }
   ]
 }

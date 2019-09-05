@@ -15,7 +15,7 @@ const Basket = ({ items, deleteAllFromBasket }) => {
           to="/"
           className="basket__link-to-menu"
         >
-          ⇦ меню
+          ⇦ додати ще
         </Link>
         {
           items ?
@@ -40,7 +40,7 @@ const Basket = ({ items, deleteAllFromBasket }) => {
 
       <main className="basket">
         <h1>Кошик</h1>
-        <p className="basket__empty-basket-message">Зараз тут пусто</p>
+        <p className="basket__empty-basket-message">Зараз тут порожньо</p>
         <Link
           to="/"
           className="basket__link-to-menu"

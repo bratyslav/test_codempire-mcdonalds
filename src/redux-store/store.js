@@ -17,7 +17,6 @@ const SET_SEARCHING_STR = 'setSearchingStr'
 const ADD_TO_BASKET = 'addToBasket';
 const DELETE_ALL_FROM_BASKET = 'deleteAllFromBasket';
 const DELETE_ITEM_FROM_BASKET = 'deleteItemFromBasket';
-const CHANGE_COUNT_OF_BASKET_ITEM = 'changeCount';
 
 //actions
 
@@ -55,12 +54,6 @@ export const deleteItemFromBasket = (id) => ({
   id
 });
 
-export const changeCountOfBasketItem = (id, direction) => ({
-  type: CHANGE_COUNT_OF_BASKET_ITEM,
-  id,
-  direction
-});
-
 // reducer
 
 const reducer = (state, action) => {
@@ -79,7 +72,6 @@ const reducer = (state, action) => {
       }
 
     case ADD_TO_BASKET:
-      console.log(action.item)
       const currentItem = state.basketItems.find(item => (
         item.id === action.item.id
       ));
@@ -121,27 +113,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         basketItems: state.basketItems.filter(item => item.id !== action.id)
-      };
-
-    case CHANGE_COUNT_OF_BASKET_ITEM:
-      return {
-        state,
-        basketItems: state.basketItems.map(item => {
-          if (item.id === action.id) {
-            return {
-              ...item,
-              count: action.direction ?
-                item.count + 1
-                :
-                item.count === 1 ?
-                  item.count
-                  :
-                  item.count - 1
-            };
-          };
-
-          return item;
-        })
       };
 
     default:
