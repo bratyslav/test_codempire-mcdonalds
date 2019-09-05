@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToBasket } from '../redux-store/store';
 import '../styles/ProductPage.css';
+import PropTypes from 'prop-types';
 
 const ProductPage = ({ match, items, addToBasket }) => {
   const [item, setInem] = useState(
@@ -73,6 +74,20 @@ const ProductPage = ({ match, items, addToBasket }) => {
         </Link>
       </main>
   );
+};
+
+ProductPage.propTypes = {
+  match: PropTypes.object.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      ingredients: PropTypes.array.isRequired,
+    })
+  ),
+  addToBasket: PropTypes.func.isRequired,
 };
 
 const mapState = (state) => ({

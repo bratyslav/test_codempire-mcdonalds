@@ -72,35 +72,12 @@ const reducer = (state, action) => {
       }
 
     case ADD_TO_BASKET:
-      const currentItem = state.basketItems.find(item => (
-        item.id === action.item.id
-      ));
-
-      if (!currentItem) {
-        return {
-          ...state,
-          basketItems: [
-            ...state.basketItems,
-            {
-              ...action.item,
-              count: 1
-            }
-          ]
-        };
-      };
-
       return {
-        state,
-        basketItems: state.basketItems.map(item => {
-          if (item.id === currentItem.id) {
-            return {
-              ...item,
-              count: currentItem.count + 1
-            };
-          };
-
-          return item;
-        })
+        ...state,
+        basketItems: [
+          ...state.basketItems,
+          action.item,
+        ]
       };
 
     case DELETE_ALL_FROM_BASKET:

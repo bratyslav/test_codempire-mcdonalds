@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { setSearchingStr } from '../redux-store/store';
 import '../styles/Search.css';
 const classNames = require('classnames');
+import PropTypes from 'prop-types';
 
 const Search = ({ setSearchingStr }) => {
   const [isActive, activity] = useState(false);
@@ -71,6 +72,10 @@ const Search = ({ setSearchingStr }) => {
       :
       <div className="search" onClick={activate}></div>      
   );
+};
+
+Search.propTypes = {
+  setSearchingStr: PropTypes.func.isRequired,
 };
 
 const mapDispatch = (dispatch) => ({

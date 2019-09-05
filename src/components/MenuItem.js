@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/MenuItem.css';
+import PropTypes from 'prop-types';
 
 const MenuItem = ({ item }) => {
   return (
@@ -9,6 +10,16 @@ const MenuItem = ({ item }) => {
       <h2>{item.name}</h2>
     </Link>
   );
+};
+
+MenuItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    ingredients: PropTypes.array,
+  }),
 };
 
 export default MenuItem;

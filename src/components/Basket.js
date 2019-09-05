@@ -4,6 +4,7 @@ import { deleteAllFromBasket } from '../redux-store/store';
 import { Link } from 'react-router-dom';
 import '../styles/Basket.css';
 import BasketItem from './BasketItem';
+import PropTypes from 'prop-types';
 
 const Basket = ({ items, deleteAllFromBasket }) => {
   return (
@@ -19,7 +20,7 @@ const Basket = ({ items, deleteAllFromBasket }) => {
         </Link>
         {
           items ?
-          items.map(item => <BasketItem item={item} key={item.id} />)
+            items.map((item, index) => <BasketItem item={item} key={index} />)
           : ''
         }
         <div className="basket__buttons-wrapper">
@@ -50,6 +51,19 @@ const Basket = ({ items, deleteAllFromBasket }) => {
       </main>
   );
 };
+
+Basket.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      ingredients: PropTypes.array.isRequired,
+    })
+  ),
+  deleteAllFromBasket: PropTypes.func.isRequired,
+}
 
 const mapState = (state) => ({
   items: state.basketItems 

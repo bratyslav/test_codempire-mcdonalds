@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { loadData } from '../redux-store/store';
 import '../styles/Menu.css';
 import MenuItem from './MenuItem';
+import PropTypes from 'prop-types';
 
 const Menu = ({ loadData, loaded, items, searchingStr }) => {
   useEffect(() => {
@@ -37,6 +38,21 @@ const Menu = ({ loadData, loaded, items, searchingStr }) => {
       <h1>Loading...</h1>
     </main>
   );
+};
+
+Menu.propTypes = {
+  loadData: PropTypes.func.isRequired,
+  loaded: PropTypes.bool.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      ingredients: PropTypes.array.isRequired,
+    })
+  ),
+  searchingStr: PropTypes.string.isRequired,
 };
 
 const mapState = (state) => ({

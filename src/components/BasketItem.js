@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteItemFromBasket } from '../redux-store/store';
 import '../styles/BasketItem.css';
+import PropTypes from 'prop-types';
 
 const BasketItem = ({ item, deleteItemFromBasket }) => {
   return (
@@ -32,6 +33,17 @@ const BasketItem = ({ item, deleteItemFromBasket }) => {
       <hr />
     </div>
   );
+};
+
+BasketItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    ingredients: PropTypes.array.isRequired,
+  }).isRequired,
+  deleteItemFromBasket: PropTypes.func.isRequired,
 };
 
 const mapDispatch = (dispatch) => ({
