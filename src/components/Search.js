@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { setSearchingStr } from '../redux-store/store';
 import '../styles/Search.css';
 const classNames = require('classnames');
 
-const Search = () => {
+const Search = ({ setSearchingStr }) => {
   const [isActive, activity] = useState(false);
   // to animate opening:
   const [openingAnimation, runOpeningAnimation] = useState(false);
@@ -59,6 +61,7 @@ const Search = () => {
           maxLength="15"
           autoFocus={true}
           autoComplete="off"
+          onChange={() => setSearchingStr(event.target.value)}
         />
         <label htmlFor="searchInput">
           <div className="search--active__search-icon" />
@@ -70,4 +73,8 @@ const Search = () => {
   );
 };
 
-export default Search;
+const mapDispatch = (dispatch) => ({
+  setSearchingStr: (str) => dispatch(setSearchingStr(str)),
+});
+
+export default connect(null, mapDispatch)(Search);

@@ -4,7 +4,7 @@ import { loadData } from '../redux-store/store';
 import '../styles/Menu.css';
 import MenuItem from './MenuItem';
 
-const Menu = ({ loadData, loaded, items }) => {
+const Menu = ({ loadData, loaded, items, searchingStr }) => {
   useEffect(() => {
     loadData();
   });
@@ -24,7 +24,9 @@ const Menu = ({ loadData, loaded, items }) => {
       <hr className="menu__headline-underline"/>
       <div className="menu__content">
         {
-          items.map(item => <MenuItem item={item} key={item.id} />)
+          items
+            .filter(item => item.name.toLowerCase().includes(searchingStr))
+            .map(item => <MenuItem item={item} key={item.id} />)
         }
       </div>
     </main>
@@ -39,7 +41,8 @@ const Menu = ({ loadData, loaded, items }) => {
 
 const mapState = (state) => ({
   items: state.data,
-  loaded: state.loaded
+  loaded: state.loaded,
+  searchingStr: state.searchingStr
 });
 
 const mapDispatch = (dispatch) => ({

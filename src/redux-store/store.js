@@ -6,12 +6,14 @@ import thunk from "redux-thunk";
 const state = {
   data: null,
   loaded: false,
-  basketItems: []
+  basketItems: [],
+  searchingStr: '',
 };
 
 // constants
 
 const SET_DATA = 'setData';
+const SET_SEARCHING_STR = 'setSearchingStr'
 const ADD_TO_BASKET = 'addToBasket';
 const DELETE_ALL_FROM_BASKET = 'deleteAllFromBasket';
 const DELETE_ITEM_FROM_BASKET = 'deleteItemFromBasket';
@@ -33,6 +35,11 @@ export const loadData = () => {
       });
   };
 };
+
+export const setSearchingStr = (str) => ({
+  type: SET_SEARCHING_STR,
+  str
+});
 
 export const addToBasket = (item) => ({
   type: ADD_TO_BASKET,
@@ -59,12 +66,18 @@ export const changeCountOfBasketItem = (id, direction) => ({
 const reducer = (state, action) => {
   switch (action.type) {
     case SET_DATA:
-      console.log(action.data)
       return {
         ...state,
         data: action.data.items,
         loaded: true
       };
+
+    case SET_SEARCHING_STR:
+      return {
+        ...state,
+        searchingStr: action.str.toLowerCase(),
+      }
+
     case ADD_TO_BASKET:
       const currentItem = state.basketItems.find(item => (
         item.id === action.item.id
