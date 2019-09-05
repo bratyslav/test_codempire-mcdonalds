@@ -23,3 +23,7 @@
   transform: scale(1.1);
 }
 
+.menu-item__name {
+  text-align: center;
+}
+

@@ -2,6 +2,7 @@
   width: 32px;
   height: 32px;
   margin-left: auto;
+  margin-top: 3px;
 
   background-image: url("https://www.mcdonalds.ua/etc/clientlibs/mcd/rwd-commons/images/top_sprite.svg");
   background-size: 140px 74px;
@@ -22,6 +23,7 @@
 .search--active {
   height: 40px;
   margin-left: auto;
+  margin-top: 3px;
 
   display: flex;
   justify-content: space-around;
@@ -52,7 +54,7 @@
 }
 
 .search--active__input {
-  width: 130px;
+  width: 200px;
   transition: width 400ms;
 
   outline: none;
@@ -73,4 +75,14 @@
   background-position: 0 -40px;
 
   cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .search--active__input {
+    width: 130px;
+  }
+
+  .search--active__input-animation {
+    width: 0;
+  }
 }

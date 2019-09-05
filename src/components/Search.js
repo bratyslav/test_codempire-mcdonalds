@@ -59,7 +59,7 @@ const Search = ({ setSearchingStr }) => {
           id="searchInput"
           type="text"
           placeholder="Search"
-          maxLength="15"
+          maxLength="30"
           autoFocus={true}
           autoComplete="off"
           onChange={() => setSearchingStr(event.target.value)}

@@ -7,7 +7,7 @@ const MenuItem = ({ item }) => {
   return (
     <Link className="menu-item" to={`/product/${item.id}`}>
       <img className="menu-item__image" src={item.image} alt="product foto"/>
-      <h2>{item.name}</h2>
+      <h2 className="menu-item__name">{item.name}</h2>
     </Link>
   );
 };

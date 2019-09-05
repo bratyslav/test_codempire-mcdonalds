@@ -25,9 +25,11 @@ const Menu = ({ loadData, loaded, items, searchingStr }) => {
       <hr className="menu__headline-underline"/>
       <div className="menu__content">
         {
-          items
-            .filter(item => item.name.toLowerCase().includes(searchingStr))
-            .map(item => <MenuItem item={item} key={item.id} />)
+            items
+              .filter(item => (
+                item.name.toLowerCase().includes(searchingStr)
+              ))
+              .map(item => <MenuItem item={item} key={item.id} />)
         }
       </div>
     </main>
