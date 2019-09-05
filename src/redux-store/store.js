@@ -79,6 +79,7 @@ const reducer = (state, action) => {
       }
 
     case ADD_TO_BASKET:
+      console.log(action.item)
       const currentItem = state.basketItems.find(item => (
         item.id === action.item.id
       ));

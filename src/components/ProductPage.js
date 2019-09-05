@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToBasket } from '../redux-store/store';
 import '../styles/ProductPage.css';
 
 const ProductPage = ({ match, items, addToBasket }) => {
-  const item = items ? items.find(item => item.id === match.params.productName) : null;
+  const [item, setInem] = useState(
+    items ? items.find(item => item.id === match.params.productName) : null
+  );
+
+  const changeComposition = (event) => {
+    setInem({
+      ...item,
+      ingredients: item.ingredients.map(ingredient => {
+        if (ingredient.name === event.target.name) {
+          return {
+            ...ingredient,
+            added: !ingredient.added,
+          };
+        };
+        return ingredient;
+      })
+    });
+  };
 
   return (
     item ?
@@ -17,6 +34,21 @@ const ProductPage = ({ match, items, addToBasket }) => {
           src={item.image}
           alt="product foto"
         />
+        <div>
+          {
+            item.ingredients.map(ingredient => (
+              <label key={ingredient.name}>
+                {ingredient.name}
+                <input
+                  type="checkbox"
+                  name={ingredient.name}
+                  checked={ingredient.added}
+                  onChange={(event) => changeComposition(event)}
+                />
+              </label>
+            ))
+          }
+        </div>
         <div className="product-page__description">
           {item.description}
         </div>
