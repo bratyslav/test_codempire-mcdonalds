@@ -11,32 +11,32 @@ const Menu = ({ loadData, loaded, items, searchingStr }) => {
     loadData();
   });
 
+  if (loaded) {
+    return (
+      <main className="menu">
+        <div className="menu__headline">
+          <h1>McDonalds&nbsp;Меню</h1>
+          <img
+            className="menu__headline-image"
+            src="https://www.mcdonalds.ua/content/ua/Eat/menu/fullmenu/_jcr_content/par/category/hero.img.png/1486555760083.png"
+            alt="menu foto"
+          />
+        </div>
+        <hr className="menu__headline-underline"/>
+        <div className="menu__content">
+          {
+              items
+                .filter(item => (
+                  item.name.toLowerCase().includes(searchingStr)
+                ))
+                .map(item => <MenuItem item={item} key={item.id} />)
+          }
+        </div>
+      </main>
+    );
+  };
+
   return (
-    loaded ?
-
-    <main className="menu">
-      <div className="menu__headline">
-        <h1>McDonalds&nbsp;Меню</h1>
-        <img
-          className="menu__headline-image"
-          src="https://www.mcdonalds.ua/content/ua/Eat/menu/fullmenu/_jcr_content/par/category/hero.img.png/1486555760083.png"
-          alt="menu foto"
-        />
-      </div>
-      <hr className="menu__headline-underline"/>
-      <div className="menu__content">
-        {
-            items
-              .filter(item => (
-                item.name.toLowerCase().includes(searchingStr)
-              ))
-              .map(item => <MenuItem item={item} key={item.id} />)
-        }
-      </div>
-    </main>
-
-    :
-
     <main className="menu">
       <Loader />
     </main>

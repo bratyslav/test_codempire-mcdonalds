@@ -26,9 +26,8 @@ const ProductPage = ({ match, items, addToBasket }) => {
     });
   };
 
-  return (
-    item ?
-
+  if (item) {
+    return (
       <main className="product-page">
         <section>
           <h1>{item.name}</h1>
@@ -71,12 +70,13 @@ const ProductPage = ({ match, items, addToBasket }) => {
           </Link>
         </section>
       </main>
+    );
+  };
 
-      :
-
-      <main className="product-page">
-        <h1>Товар не знайдено</h1>
-      </main>
+  return (
+    <main className="product-page">
+      <h1>Товар не знайдено</h1>
+    </main>
   );
 };
 

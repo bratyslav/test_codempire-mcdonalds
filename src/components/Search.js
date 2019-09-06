@@ -47,8 +47,8 @@ const Search = ({ setSearchingStr }) => {
 
   useOutsideAlterter(wrapperRef);
 
-  return (
-    isActive ?
+  if (isActive) {
+    return (
       <div className="search--active" ref={wrapperRef}>
         <div
           className="search--active__deactivate-button"
@@ -69,8 +69,11 @@ const Search = ({ setSearchingStr }) => {
         </label>
 
       </div>
-      :
-      <div className="search" onClick={activate}></div>      
+    );
+  };
+
+  return(
+    <div className="search" onClick={activate}></div>      
   );
 };
 

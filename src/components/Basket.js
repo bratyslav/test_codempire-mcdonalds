@@ -7,9 +7,8 @@ import BasketItem from './BasketItem';
 import PropTypes from 'prop-types';
 
 const Basket = ({ items, deleteAllFromBasket }) => {
-  return (
-    items.length !== 0 ?
-
+  if (items.length !== 0) {
+    return (
       <main className="basket">
         <h1>Кошик</h1>
         <Link
@@ -36,19 +35,20 @@ const Basket = ({ items, deleteAllFromBasket }) => {
           </button>
         </div>
       </main>
+    );
+  };
 
-      :
-
-      <main className="basket">
-        <h1>Кошик</h1>
-        <p className="basket__empty-basket-message">Зараз тут порожньо</p>
-        <Link
-          to="/"
-          className="basket__link-to-menu"
-        >
-          ⇦ меню
-        </Link>
-      </main>
+  return (
+    <main className="basket">
+      <h1>Кошик</h1>
+      <p className="basket__empty-basket-message">Зараз тут порожньо</p>
+      <Link
+        to="/"
+        className="basket__link-to-menu"
+      >
+        ⇦ меню
+      </Link>
+    </main>
   );
 };
 
