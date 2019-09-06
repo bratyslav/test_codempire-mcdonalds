@@ -1,6 +1,12 @@
+.loader {
+  min-height: calc(100vh - 94px);
+  display: flex;
+}
+
 .lds-ring {
-  margin-left: calc(50vw - 184px / 2);
-  margin-top: calc(30vh - 64px / 2);
+  margin-top: calc(40vh - 64px / 2);
+  margin-left: auto;
+  margin-right: auto;
 
   display: inline-block;
   position: relative;

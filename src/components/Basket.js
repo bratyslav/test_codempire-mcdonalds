@@ -11,16 +11,11 @@ const Basket = ({ items, deleteAllFromBasket }) => {
     return (
       <main className="basket">
         <h1>Кошик</h1>
-        <Link
-          to="/"
-          className="basket__link-to-menu"
-        >
+        <Link to="/" className="basket__link-to-menu">
           ⇦ додати ще
         </Link>
         {
-          items ?
-            items.map((item, index) => <BasketItem item={item} key={index} />)
-          : ''
+          items.map((item, index) => <BasketItem item={item} key={index} />)
         }
         <div className="basket__buttons-wrapper">
           <button>Оформити замовлення</button>

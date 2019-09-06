@@ -37,7 +37,7 @@ const Menu = ({ loadData, loaded, items, searchingStr }) => {
   };
 
   return (
-    <main className="menu">
+    <main className="loader">
       <Loader />
     </main>
   );
