@@ -20,7 +20,7 @@ const BasketItem = ({ item, deleteItemFromBasket }) => {
             {
               item.ingredients.map(ingredient => (
                   <div key={ingredient.name}>
-                    {`${ingredient.added? '✓' : '×' } ${ingredient.name}`}
+                    {`${ingredient.added? '✓' : '×'} ${ingredient.name}`}
                   </div>
               ))
             }

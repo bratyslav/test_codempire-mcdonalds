@@ -65,7 +65,7 @@ const ProductPage = ({ match, items, addToBasket }) => {
           <Link
             className="product-page__add-button"
             to="/basket"
-            onClick={() => addToBasket(item)}
+            onClick={() => addToBasket({...item, id: new Date().getTime()})}
           >
             Додати в Кошик
           </Link>
