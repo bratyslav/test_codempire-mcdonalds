@@ -44,11 +44,12 @@ const ProductPage = ({ match, items, addToBasket }) => {
                 <label key={ingredient.name}>
                   <input
                     type="checkbox"
+                    className="checkbox"
                     name={ingredient.name}
                     checked={ingredient.added}
                     onChange={(event) => changeComposition(event)}
                   />
-                  <span className="checkmark"></span>
+                  <span className="checkmark">✓</span>
                   {ingredient.name}
                   <br />
                 </label>
