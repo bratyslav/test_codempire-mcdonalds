@@ -1,0 +1,62 @@
+.basket-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.basket-item__image {
+  width: 150px;
+  height: 150px;
+}
+
+.basket-item__name {
+  margin-left: 10px;
+}
+
+.basket-item__ingredients {
+  display: flex;
+  margin-left: auto;
+}
+
+.basket-item button {
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 30px;
+
+  font-size: 30px;
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.basket-item button:hover {
+  background-color:rgb(230, 230, 230);
+  transition: all 200ms;
+}
+
+.basket-item__delete-button {
+  margin-left: 10px;
+}
+
+@media (max-width: 1100px) {
+  .basket-item__image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .basket-item {
+    flex-direction: column;
+  }
+
+  .basket-item__ingredients {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,25 @@
+footer {
+  height: 40px;
+  width: 100%;
+  
+  text-align: center;
+  line-height: 40px;
+  background-color: black;
+  color: white;
+}
+
+.footer__mailto {
+  color: white;
+  text-decoration: none;
+}
+
+.footer__mailto:hover {
+  color: rgb(250, 204, 0);
+  transition: color 300ms;
+}
+
+@media (max-width: 397px) {
+  footer {
+    line-height: 20px;
+  }
+}

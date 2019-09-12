@@ -1,0 +1,88 @@
+.search {
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  margin-top: 3px;
+
+  background-image: url("https://www.mcdonalds.ua/etc/clientlibs/mcd/rwd-commons/images/top_sprite.svg");
+  background-size: 140px 74px;
+
+  cursor: pointer;
+  transition: transform 300ms;
+}
+
+.search:hover {
+  transform: scale(1.08);
+  transition: transform 300ms;
+}
+
+.search:active {
+  transform: scale(1.04);
+}
+
+.search--active {
+  height: 40px;
+  margin-left: auto;
+  margin-top: 3px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search--active__deactivate-button {
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+
+  background-image: url('../images/deactivate_icon.svg');
+  background-size: contain;
+
+  cursor: pointer;
+  transition: transform 200ms;
+}
+
+.search--active__deactivate-button:hover {
+  transform: scale(1.3);
+}
+
+.search--active__deactivate-button:active {
+  transform: scale(1);
+}
+
+.search--active__input {
+  width: 200px;
+  transition: width 400ms;
+
+  outline: none;
+  border: none;
+  font-size: 20px;
+}
+
+.search--active__input-animation {
+  width: 0;
+}
+
+.search--active__search-icon {
+  width: 32px;
+  height: 32px;
+
+  background-image: url("https://www.mcdonalds.ua/etc/clientlibs/mcd/rwd-commons/images/top_sprite.svg");
+  background-size: 140px 74px;
+  background-position: 0 -40px;
+
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .search--active__input {
+    width: 130px;
+  }
+
+  .search--active__input-animation {
+    width: 0;
+  }
+}

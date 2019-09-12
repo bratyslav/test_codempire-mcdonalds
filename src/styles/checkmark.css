@@ -1,0 +1,19 @@
+.checkmark {
+  margin-right: 5px;
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.checkbox {
+  width: 1px;
+}
+
+.checkbox:checked ~.checkmark {
+  color: black;
+}

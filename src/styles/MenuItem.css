@@ -1,0 +1,29 @@
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  color: black;
+  text-decoration: none;
+}
+
+.menu-item__image {
+  width: 200px;
+  height: 200px;
+  transition: transform 300ms;
+}
+
+.menu-item__image:hover {
+  transform: scale(1.2);
+  transition: transform 300ms;
+}
+
+
+.menu-item__image:active {
+  transform: scale(1.1);
+}
+
+.menu-item__name {
+  text-align: center;
+}
+
